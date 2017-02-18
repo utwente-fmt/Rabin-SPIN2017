@@ -183,7 +183,7 @@ test_all_mcc2015_ltsmin() {
 	    echo ""
 	    echo "${ltl}"
 	    echo ""
-	    for count in `seq 5`
+	    for count in `seq 10`
 	    do
 		test_ltsmin ${folder} ${ltl} ${workers} ufscc tgba
 		RABIN_ALG="ltl3hoa"
@@ -207,8 +207,6 @@ init
 ############################################################
 
 test_all_mcc2015_ltsmin 16
-
-#test_ltsmin BridgeAndVehicles-PT-V20P20N10 BridgeAndVehicles-PT-V20P20N10_LTLC_4_ 16 ufscc tgba
 
 ############################################################
 

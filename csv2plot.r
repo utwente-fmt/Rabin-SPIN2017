@@ -59,8 +59,8 @@ MYGREEN = rgb(161/255, 217/255, 155/255, 1)
 results = read.csv("results.csv")
 
 
-#results_ok = subset(results, errmsg != "FAIL")
-results_ok = subset(results, errmsg == "OK")
+results_ok = subset(results, errmsg != "FAIL")
+#results_ok = subset(results, errmsg == "OK")
 
 
 ####################
