@@ -1,0 +1,19 @@
+HOA: v1
+States: 2
+Start: 1
+AP: 2 "(action == 't58_to_59')" "(action == 't43_to_44')"
+acc-name: generalized-Rabin 2 1 0
+Acceptance: 3 (Fin(0) & Inf(1)) | Fin(2)
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[0&1] 0 {2}
+[!0&1] 0
+[0&!1] 0 {1 2}
+[!0&!1] 0 {1}
+State: 1
+[1] 1 {2}
+[0&!1] 0 {1 2}
+[!0&!1] 0 {1}
+--END--

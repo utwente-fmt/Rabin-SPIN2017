@@ -1,0 +1,13 @@
+HOA: v1
+States: 1
+Start: 0
+AP: 1 "(((((P-fordo_12_0 + P-fordo_12_1) + P-fordo_12_2) + P-fordo_12_3) + P-fordo_12_4) <= ((((P-CS_21_0 + P-CS_21_1) + P-CS_21_2) + P-CS_21_3) + P-CS_21_4))"
+acc-name: generalized-Rabin 2 0 1
+Acceptance: 3 Fin(0) | (Fin(1) & Inf(2))
+properties: trans-labels explicit-labels trans-acc colored complete
+properties: deterministic
+--BODY--
+State: 0
+[0] 0 {0}
+[!0] 0 {2}
+--END--

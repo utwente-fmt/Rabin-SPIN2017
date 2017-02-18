@@ -1,0 +1,13 @@
+HOA: v1
+States: 1
+Start: 0
+AP: 1 "(3 <= (((((((((((((((((((((((((((((P-server_request_1_1 + P-server_request_1_2) + P-server_request_2_1) + P-server_request_2_2) + P-server_request_3_1) + P-server_request_3_2) + P-server_request_4_1) + P-server_request_4_2) + P-server_request_5_1) + P-server_request_5_2) + P-server_request_6_1) + P-server_request_6_2) + P-server_request_7_1) + P-server_request_7_2) + P-server_request_8_1) + P-server_request_8_2) + P-server_request_9_1) + P-server_request_9_2) + P-server_request_10_1) + P-server_request_10_2) + P-server_request_11_1) + P-server_request_11_2) + P-server_request_12_1) + P-server_request_12_2) + P-server_request_13_1) + P-server_request_13_2) + P-server_request_14_1) + P-server_request_14_2) + P-server_request_15_1) + P-server_request_15_2))"
+acc-name: Rabin 1
+Acceptance: 2 Fin(0) & Inf(1)
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic stutter-invariant
+--BODY--
+State: 0
+[0] 0
+[!0] 0 {1}
+--END--

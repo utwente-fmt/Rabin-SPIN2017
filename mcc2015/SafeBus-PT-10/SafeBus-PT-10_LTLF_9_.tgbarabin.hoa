@@ -1,0 +1,18 @@
+HOA: v1
+States: 3
+Start: 1
+AP: 10 "(action == 'I_rec2_1_1')" "(action == 'I_rec2_2_2')" "(action == 'I_rec2_3_3')" "(action == 'I_rec2_4_4')" "(action == 'I_rec2_5_5')" "(action == 'I_rec2_6_6')" "(action == 'I_rec2_7_7')" "(action == 'I_rec2_8_8')" "(action == 'I_rec2_9_9')" "(action == 'I_rec2_10_10')"
+acc-name: Rabin 1
+Acceptance: 2 Fin(0) & Inf(1)
+properties: trans-labels explicit-labels trans-acc stutter-invariant
+properties: inherently-weak
+--BODY--
+State: 0
+[t] 0
+[!0&!1&!2&!3&!4&!5&!6&!7&!8&!9] 2
+State: 1
+[!0&!1&!2&!3&!4&!5&!6&!7&!8&!9] 0
+[!0&!1&!2&!3&!4&!5&!6&!7&!8&!9] 1 {1}
+State: 2
+[!0&!1&!2&!3&!4&!5&!6&!7&!8&!9] 2 {1}
+--END--

@@ -1,0 +1,26 @@
+HOA: v1
+States: 4
+Start: 1
+AP: 2 "(1 <= ((((((((((((((((((((NB_ATTENTE_A_0 + NB_ATTENTE_A_1) + NB_ATTENTE_A_2) + NB_ATTENTE_A_3) + NB_ATTENTE_A_4) + NB_ATTENTE_A_5) + NB_ATTENTE_A_6) + NB_ATTENTE_A_7) + NB_ATTENTE_A_8) + NB_ATTENTE_A_9) + NB_ATTENTE_A_10) + NB_ATTENTE_A_11) + NB_ATTENTE_A_12) + NB_ATTENTE_A_13) + NB_ATTENTE_A_14) + NB_ATTENTE_A_15) + NB_ATTENTE_A_16) + NB_ATTENTE_A_17) + NB_ATTENTE_A_18) + NB_ATTENTE_A_19) + NB_ATTENTE_A_20))" "(ATTENTE_B <= (CONTROLEUR_1 + CONTROLEUR_2))"
+acc-name: Rabin 1
+Acceptance: 2 Fin(0) & Inf(1)
+properties: trans-labels explicit-labels trans-acc complete
+--BODY--
+State: 0
+[t] 0 {1}
+State: 1
+[!0&!1] 0
+[0&!1] 1 {1}
+[1] 1 {0 1}
+[!0&1] 2
+[0&1] 3
+State: 2
+[!1] 0
+[1] 2
+State: 3
+[!0&!1] 0
+[0&!1] 1 {1}
+[!0&1] 2
+[0&1] 3
+[!0&1] 3 {0}
+--END--

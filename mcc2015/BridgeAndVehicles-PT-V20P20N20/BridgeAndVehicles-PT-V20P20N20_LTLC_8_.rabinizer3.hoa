@@ -1,0 +1,16 @@
+HOA: v1
+States: 2
+Start: 0
+AP: 2 "(1 <= ((((((((((((((((((((NB_ATTENTE_B_0 + NB_ATTENTE_B_1) + NB_ATTENTE_B_2) + NB_ATTENTE_B_3) + NB_ATTENTE_B_4) + NB_ATTENTE_B_5) + NB_ATTENTE_B_6) + NB_ATTENTE_B_7) + NB_ATTENTE_B_8) + NB_ATTENTE_B_9) + NB_ATTENTE_B_10) + NB_ATTENTE_B_11) + NB_ATTENTE_B_12) + NB_ATTENTE_B_13) + NB_ATTENTE_B_14) + NB_ATTENTE_B_15) + NB_ATTENTE_B_16) + NB_ATTENTE_B_17) + NB_ATTENTE_B_18) + NB_ATTENTE_B_19) + NB_ATTENTE_B_20))" "(3 <= CAPACITE)"
+acc-name: generalized-Rabin 2 0 1
+Acceptance: 3 Fin(0) | (Fin(1) & Inf(2))
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[1] 0 {0 1}
+[0&!1] 0 {0 2}
+[!0&!1] 1 {0 2}
+State: 1
+[t] 1
+--END--

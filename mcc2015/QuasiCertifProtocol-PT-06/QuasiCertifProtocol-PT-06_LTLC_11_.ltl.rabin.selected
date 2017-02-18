@@ -1,0 +1,1 @@
+([]((X((CstopOK_0 + CstopOK_1 + CstopOK_6 + CstopOK_5 + CstopOK_4 + CstopOK_3 + CstopOK_2) <= (SstopOK_2 + SstopOK_3 + SstopOK_0 + SstopOK_1 + SstopOK_6 + SstopOK_4 + SstopOK_5))) U ([]((SstopOK_2 + SstopOK_3 + SstopOK_0 + SstopOK_1 + SstopOK_6 + SstopOK_4 + SstopOK_5) <= (AstopAbort)))))

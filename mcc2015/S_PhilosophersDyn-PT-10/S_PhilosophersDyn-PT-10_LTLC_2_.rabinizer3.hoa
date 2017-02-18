@@ -1,0 +1,13 @@
+HOA: v1
+States: 1
+Start: 0
+AP: 1 "((((((((((Forks_10 + Forks_8) + Forks_1) + Forks_7) + Forks_6) + Forks_5) + Forks_4) + Forks_3) + Forks_9) + Forks_2) <= (((((((((HasRight_9 + HasRight_2) + HasRight_3) + HasRight_8) + HasRight_1) + HasRight_10) + HasRight_6) + HasRight_7) + HasRight_4) + HasRight_5))"
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[0] 0 {0}
+[!0] 0
+--END--

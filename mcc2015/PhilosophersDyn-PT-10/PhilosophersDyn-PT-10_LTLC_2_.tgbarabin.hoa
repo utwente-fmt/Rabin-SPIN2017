@@ -1,0 +1,15 @@
+HOA: v1
+States: 2
+Start: 1
+AP: 1 "((((((((((Forks_10 + Forks_8) + Forks_1) + Forks_7) + Forks_6) + Forks_5) + Forks_4) + Forks_3) + Forks_9) + Forks_2) <= (((((((((HasRight_9 + HasRight_2) + HasRight_3) + HasRight_8) + HasRight_1) + HasRight_10) + HasRight_6) + HasRight_7) + HasRight_4) + HasRight_5))"
+acc-name: Rabin 1
+Acceptance: 2 Fin(0) & Inf(1)
+properties: trans-labels explicit-labels trans-acc stutter-invariant
+properties: inherently-weak
+--BODY--
+State: 0
+[!0] 0 {1}
+State: 1
+[!0] 0
+[t] 1
+--END--

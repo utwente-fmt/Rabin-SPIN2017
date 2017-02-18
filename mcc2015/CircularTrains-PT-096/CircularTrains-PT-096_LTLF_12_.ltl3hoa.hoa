@@ -1,0 +1,16 @@
+HOA: v1
+States: 2
+Start: 0
+AP: 2 "(action == 't58_to_59')" "(action == 't43_to_44')"
+acc-name: Rabin 1
+Acceptance: 2 Fin(0) & Inf(1)
+properties: trans-labels explicit-labels trans-acc complete
+--BODY--
+State: 0
+[1] 0
+[!1] 0 {1}
+[!1] 1
+State: 1
+[!0] 1 {1}
+[0] 1 {0 1}
+--END--

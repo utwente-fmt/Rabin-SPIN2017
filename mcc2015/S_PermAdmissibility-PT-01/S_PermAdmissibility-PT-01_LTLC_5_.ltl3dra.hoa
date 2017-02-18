@@ -1,0 +1,13 @@
+HOA: v1
+States: 1
+Start: 0
+AP: 2 "(1 <= c15)" "(c9 <= (((((((aux10_0 + aux10_2) + aux10_1) + aux10_4) + aux10_3) + aux10_5) + aux10_6) + aux10_7))"
+acc-name: Rabin 1
+Acceptance: 2 Fin(0) & Inf(1)
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[1] 0
+[!1] 0 {1}
+--END--

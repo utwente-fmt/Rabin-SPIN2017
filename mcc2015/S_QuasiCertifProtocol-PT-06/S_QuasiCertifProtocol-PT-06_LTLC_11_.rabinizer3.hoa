@@ -1,0 +1,28 @@
+HOA: v1
+States: 5
+Start: 0
+AP: 2 "(((((((CstopOK_0 + CstopOK_1) + CstopOK_6) + CstopOK_5) + CstopOK_4) + CstopOK_3) + CstopOK_2) <= ((((((SstopOK_2 + SstopOK_3) + SstopOK_0) + SstopOK_1) + SstopOK_6) + SstopOK_4) + SstopOK_5))" "(((((((SstopOK_2 + SstopOK_3) + SstopOK_0) + SstopOK_1) + SstopOK_6) + SstopOK_4) + SstopOK_5) <= AstopAbort)"
+acc-name: generalized-Rabin 2 0 1
+Acceptance: 3 Fin(0) | (Fin(1) & Inf(2))
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[1] 1 {0}
+[!1] 2 {0 2}
+State: 1
+[0&1] 1 {0}
+[!0&1] 4 {0}
+[0&!1] 2 {0 2}
+[!0&!1] 3 {0 2}
+State: 2
+[0&1] 1 {0}
+[!0&1] 3 {0}
+[0&!1] 2 {0 2}
+[!0&!1] 3 {0 2}
+State: 3
+[t] 3
+State: 4
+[1] 4 {0}
+[!1] 3 {0 2}
+--END--

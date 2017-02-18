@@ -1,0 +1,24 @@
+HOA: v1
+States: 5
+Start: 0
+AP: 2 "(((((Server_Waiting_3 + Server_Waiting_4) + Server_Waiting_5) + Server_Waiting_2) + Server_Waiting_1) <= ((((((((((((((((((((((((Client_Sending_22 + Client_Sending_4) + Client_Sending_13) + Client_Sending_21) + Client_Sending_14) + Client_Sending_7) + Client_Sending_6) + Client_Sending_1) + Client_Sending_15) + Client_Sending_20) + Client_Sending_19) + Client_Sending_9) + Client_Sending_18) + Client_Sending_8) + Client_Sending_24) + Client_Sending_17) + Client_Sending_10) + Client_Sending_3) + Client_Sending_25) + Client_Sending_16) + Client_Sending_2) + Client_Sending_11) + Client_Sending_5) + Client_Sending_12) + Client_Sending_23))" "(RequestBufferSlots <= ((((((((((((((((((((((((RequestBuffer_14 + RequestBuffer_2) + RequestBuffer_22) + RequestBuffer_15) + RequestBuffer_9) + RequestBuffer_16) + RequestBuffer_3) + RequestBuffer_21) + RequestBuffer_8) + RequestBuffer_17) + RequestBuffer_20) + RequestBuffer_10) + RequestBuffer_1) + RequestBuffer_19) + RequestBuffer_5) + RequestBuffer_25) + RequestBuffer_11) + RequestBuffer_18) + RequestBuffer_4) + RequestBuffer_12) + RequestBuffer_7) + RequestBuffer_24) + RequestBuffer_13) + RequestBuffer_23) + RequestBuffer_6))"
+acc-name: Rabin 1
+Acceptance: 2 Fin(0) & Inf(1)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[t] 2
+[t] 3
+State: 1
+[!0] 1 {1}
+State: 2
+[!0&!1] 1
+[!1] 4
+State: 3
+[t] 2
+[1] 3
+[!1] 3 {1}
+State: 4
+[!0&1] 1
+[1] 4
+--END--
