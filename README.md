@@ -29,28 +29,28 @@ Abstract
 
 *In the automata theoretic approach to explicit state LTL
 model checking, the synchronized product of the model and
-an automata that represents the negated formula is checked
-for emptiness. In practice, a (generalized) Büchi automaton
-(GBA) is constructed and used for this procedure.*
+an automaton that represents the negated formula is checked
+for emptiness. In practice, a (transition-based generalized)
+Büchi automaton (TGBA) is constructed and used for this
+procedure.*
 
 *This paper investigates whether using a more general form
-of automaton, a generalized Rabin automaton (GRA), improves
-the model checking procedure. An advantage of using
-a GRA is that its number of states can be significantly less
-than that of a GBA. Unlike a GBA, a GRA can also deterministically
-represent any LTL formula. However, the corresponding
-emptiness checking procedure is more involved.*
+of acceptance, namely transition-based generalized Rabin
+automata (TGRAs), improves the model checking proce-
+dure. TGRAs can have significantly fewer states than TG-
+BAs, however the corresponding emptiness checking proce-
+dure is more involved. With recent advances in probabilistic
+model checking and LTL to TGRA translators, it is only
+natural to ask whether checking a TGRA directly is more
+advantageous in practice.*
 
-*With recent advances in probabilistic model checking and
-LTL to GRA translators, it is only natural to ask whether
-checking a GRA directly is more advantageous in practice.
-We designed a multi-core GRA checking algorithm and
-performed experiments on a subset of the models and formulas
-from the 2015 Model Checking Contest. Findings
-include that our algorithm can be used as a replacement
-for a GBA checking algorithm without losing performance.
-We also report advantages and disadvantages of using our
-algorithm to check TGRAs directly.*
+*We designed a multi-core TGRA checking algorithm and
+performed experiments on a subset of the models and formu-
+las from the 2015 Model Checking Contest. Findings include
+that our algorithm can be used as a replacement for a TGBA
+checking algorithm without losing performance. We also re-
+port advantages and disadvantages of using our algorithm
+to check TGRAs directly.*
 
 Installation
 ---
@@ -89,10 +89,10 @@ zlib1g-dev zlib1g flex ant asciidoc xmlto doxygen wget git
 3. Run `ltsminreconf`:
     * `$ ./ltsminreconf`
 4. Configure the LTSmin build:
-    * `$ ./configure --without-scoop --with-spot=$HOME/install --prefix $HOME/install`
+    * `$ ./configure --prefix=$HOME/install PKG_CONFIG_LIBDIR="$HOME/install/lib/pkgconfig" --without-sylvan --without-scoop`
     * Perhaps change the prefix location. At current it will install to your `$HOME` directory under `install`.
 5. Make and install (we set a timeout during the compilation):
-    * `$ make CFLAGS="-DCHECKER_TIMEOUT_TIME=600" && make install`
+    * `$ make CFLAGS="-DCHECKER_TIMEOUT_TIME=600 -O2" && make install`
 
 
 Usage

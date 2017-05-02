@@ -33,7 +33,7 @@ time_mean = function(x, na.rm=TRUE){
   if (800.000 %in% x) {
     return(700.000);
   }
-  mean(x)
+  geom_mean(x)
 }
 
 # standard var
@@ -285,9 +285,9 @@ f_compare(results_tgba, results_rabinizer3, "TGBA", "Rabinizer3")
 f_compare(results_tgba, results_tgbarabin,  "TGBA", "TGBA-TGRA")
 
 
-f_compare(results_ltl3hoa,    results_ltl3hoa_par,    "LTL3HOA-seq", "LTL3HOA-par")
-f_compare(results_ltl3dra,    results_ltl3dra_par,    "LTL3DRA-seq", "LTL3DRA-par")
-f_compare(results_rabinizer3, results_rabinizer3_par, "Rabinizer3-seq", "Rabinizer3-par")
+#f_compare(results_ltl3hoa,    results_ltl3hoa_par,    "LTL3HOA-seq", "LTL3HOA-par")
+#f_compare(results_ltl3dra,    results_ltl3dra_par,    "LTL3DRA-seq", "LTL3DRA-par")
+#f_compare(results_rabinizer3, results_rabinizer3_par, "Rabinizer3-seq", "Rabinizer3-par")
 
 
 ## print a legend
@@ -327,7 +327,7 @@ noce   = subset(results_tgba, ltl == -1)
 ce = subset(results_tgba, ltl > -1)
 
 
-comb_all_1 = merge(results_tgba, results_tgbarabin, by="model", all = FALSE)
+comb_all_1 = merge(noce, results_tgbarabin, by="model", all = FALSE)
 comb_all_2 = merge(results_ltl3hoa, results_ltl3dra, by="model", all = FALSE)
 comb_all_3 = merge(comb_all_2, results_rabinizer3, by="model", all = FALSE)
 comb_all   = merge(comb_all_1, comb_all_3, by="model", all = FALSE)
@@ -357,6 +357,15 @@ sprintf("{\tt %.2f} & {\tt %.2f} & {\tt %.2f} & {\tt %.2f} & {\tt %.2f}",
         geom_mean(comb_all$autsize.x.x)  # tgba
 )
 
+print("Rabin pairs:")
+sprintf("{\tt %.2f} & {\tt %.2f} & {\tt %.2f} & {\tt %.2f} & {\tt %.2f}",
+        geom_mean(comb_all$rabinpairs.x.y), # ltl3hoa
+        geom_mean(comb_all$rabinpairs.y.y), # ltl3dra
+        geom_mean(comb_all$rabinpairs),     # rabinizer3
+        geom_mean(comb_all$rabinpairs.y.x), # tgbarabin
+        geom_mean(comb_all$rabinpairs.x.x)  # tgba
+)
+
 print("ustates:")
 sprintf("{\tt %.2f} & {\tt %.2f} & {\tt %.2f} & {\tt %.2f} & {\tt %.2f}",
         geom_mean(comb_all$ustates.x.y), # ltl3hoa
@@ -367,9 +376,25 @@ sprintf("{\tt %.2f} & {\tt %.2f} & {\tt %.2f} & {\tt %.2f} & {\tt %.2f}",
 )
 
 
+print("utrans:")
+sprintf("{\tt %.2f} & {\tt %.2f} & {\tt %.2f} & {\tt %.2f} & {\tt %.2f}",
+        geom_mean(comb_all$utrans.x.y), # ltl3hoa
+        geom_mean(comb_all$utrans.y.y), # ltl3dra
+        geom_mean(comb_all$utrans),     # rabinizer3
+        geom_mean(comb_all$utrans.y.x), # tgbarabin
+        geom_mean(comb_all$utrans.x.x)  # tgba
+)
 
 
 
+
+
+# Export results to CSV
+write.csv(results_ltl3dra, file = "summarized-results/ltl3dra.csv")
+write.csv(results_ltl3hoa, file = "summarized-results/ltl3hoa.csv")
+write.csv(results_rabinizer3, file = "summarized-results/rabinizer3.csv")
+write.csv(results_tgba, file = "summarized-results/tgba.csv")
+write.csv(results_tgbarabin, file = "summarized-results/tgba-tgra.csv")
 
 
 
